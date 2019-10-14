@@ -1,9 +1,4 @@
-<?php
-	session_start();
-	if (isset($_SESSION['info'])) {
-		$data=$_SESSION['info'];
-	}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +11,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+	<h2 style="text-align: center; margin-bottom: 30px;">DANH SÁCH SINH VIÊN</h2>
 	<?php
 		if (isset($_COOKIE['msg'])) {
 		?>
@@ -27,7 +22,6 @@
 			<?php
 		}
 	?>
-	<h2 style="text-align: center; margin-bottom: 30px;">DANH SÁCH SINH VIÊN</h2>
 	<table class="table">
 	  <thead>
 	    <tr>
@@ -39,6 +33,11 @@
 	    </tr>
 	  </thead>
 	  <tbody>
+		<?php
+			session_start();
+			if (isset($_SESSION['info'])) {
+				$data=$_SESSION['info'];
+		?>
 	  	<?php
 	  		$i=0;
 	  		foreach ($data as $value) {
@@ -56,6 +55,9 @@
 	      </td>
 	    </tr>
 	    <?php
+			}
+		?>
+		<?php
 			}
 		?>
 	  </tbody>

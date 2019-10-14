@@ -11,7 +11,7 @@ if (isset($_POST['submit']))
     $data['gioitinh'] = isset($_POST['gender']) ? $_POST['gender'] : '';
     $data['address'] = isset($_POST['address']) ? $_POST['address'] : '';
 
-    $_SESSION['info'] = $data;
+    $_SESSION['info_student'] = $data;
 
     if (empty($data['codeStudent'])){
         $error['codeStudent'] = 'Bạn chưa nhập mã sinh viên';

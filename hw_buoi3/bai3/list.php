@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h2 style="text-align: center;">DANH SÁCH SẢN PHẨM</h2>
-	<a style="text-align: right;  position: relative; float: right; right: 10%; margin-bottom: 2%;" class="btn btn-success" href="cart.php">Vào xem giỏ hàng</a>
+	<a style=" position: relative; right:-80%; margin-bottom: 2%;" class="btn btn-success" href="cart.php">Vào xem giỏ hàng</a>
 	<table class="table table-hover">
   <thead>
     <tr>

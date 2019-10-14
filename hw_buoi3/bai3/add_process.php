@@ -15,6 +15,5 @@
 		$_SESSION['cart'][$maSP]=$product;
 		$_SESSION['cart'][$maSP]['add_time']=time();
 	}
-	setcookie('msg','Đã thêm vào giỏ hàng',time()+2);
-	header('Location: list.php');
+	header('Location: cart.php');
 ?>

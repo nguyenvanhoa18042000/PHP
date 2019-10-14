@@ -1,6 +1,8 @@
 <?php
 	session_start();
-	$products=$_SESSION['cart'];
+	if (isset($_SESSION['cart'])) {
+		$products=$_SESSION['cart'];
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,6 +29,9 @@
     </tr>
   </thead>
   <tbody>
+  	<?php
+  		if (isset($products)) {
+  	?>
   	<?php $sum=0; ?>
   	<?php foreach ($products as $product) {
   		$sum+= $product['soluongSP'] * $product['giaSP'];
@@ -51,6 +56,9 @@
 		<td colspan="3" style="font-weight: bold; text-align: center;"> <?= number_format($sum); ?>VNĐ</td>
 		<td colspan="1"></td>
 	</tr>
+	<?php
+	}
+	?>
   </tbody>
 </table>
 </body>

@@ -1,4 +1,9 @@
-
+<?php 
+	session_start();
+	if (isset($_SESSION['info_student'])) {
+		$data=$_SESSION['info_student'];
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,15 +16,14 @@
 	}
 </style>
 <body>
-	<?php session_start(); ?>
 	<h2>THÔNG TIN SINH VIÊN</h2>
 	<ul>
-		<li>Mã sinh viên : <?php echo $_SESSION['info']['codeStudent'] ?></li>
-		<li>Họ và tên : <?php echo $_SESSION['info']['name'] ?></li>
-		<li>Số điện thoại : <?php echo $_SESSION['info']['phoneNumber'] ?></li>
-		<li>Email : <?php echo $_SESSION['info']['email'] ?> </li>
-		<li>Giới tính : <?php echo $_SESSION['info']['gioitinh'] ?> </li>
-		<li>Địa chỉ : <?php echo $_SESSION['info']['address'] ?></li>
+		<li>Mã sinh viên : <?php echo $data['codeStudent'] ?></li>
+		<li>Họ và tên : <?php echo $data['name'] ?></li>
+		<li>Số điện thoại : <?php echo $data['phoneNumber'] ?></li>
+		<li>Email : <?php echo $data['email'] ?> </li>
+		<li>Giới tính : <?php echo $data['gioitinh'] ?> </li>
+		<li>Địa chỉ : <?php echo $data['address'] ?></li>
 	</ul>
 </body>
 </html>
