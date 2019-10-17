@@ -2,6 +2,7 @@
 	session_start();
 	if (isset($_SESSION['cart'])) {
 		$products=$_SESSION['cart'];
+		// do lúc này mình lấy từ session r lên ko phải require file products vào
 	}
 ?>
 <!DOCTYPE html>
