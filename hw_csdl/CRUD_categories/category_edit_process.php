@@ -2,7 +2,7 @@
 	require_once('connection_mysql.php');
     $data = $_POST;
     $id = $_POST['id']; 
-    $query = "UPDATE categories SET name='".$data['name']."' , description='".$data['description']."' WHERE  id =".$id;
+    $query = "UPDATE categories SET name='".$data['name']."' , description='".$data['description']."',name='".$data['parent_id']."' WHERE  id =".$id;
 
     $result = $conn->query($query);
 

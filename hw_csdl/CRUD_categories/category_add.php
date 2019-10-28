@@ -1,3 +1,15 @@
+<?php
+    require_once('connection_mysql.php');
+    $query = "SELECT * FROM categories WHERE parent_id is NULL";
+
+    $result = $conn->query($query);
+
+    $categories = array();
+
+    while($row = $result->fetch_assoc()) { 
+    $categories[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +37,18 @@
             <div class="form-group">
                 <label for="">Description</label>
                 <input type="text" class="form-control" id="" placeholder="" name="description">
+            </div>
+            <div class="form-group">
+                <label for="">Chọn danh mục cha</label>
+                <select name="parent_id" class="form-group form-control">
+                    <option value="0">Mời bạn chọn</option>
+                <?php foreach ($categories as $row_category) { ?>
+                    <option value="<?= $row_category['id'] ?>"><?= $row_category['name'] ?></option>
+                <?php
+                } 
+                ?>
+                  
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

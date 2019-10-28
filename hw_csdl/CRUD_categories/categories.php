@@ -1,7 +1,7 @@
 <?php
 	require_once('connection_mysql.php');
 	$query = "SELECT * FROM categories";
-
+	
 	$result = $conn->query($query);
 
 	$categories = array();

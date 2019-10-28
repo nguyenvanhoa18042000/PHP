@@ -8,6 +8,16 @@
     $result = $conn->query($query);
 
     $row = $result->fetch_assoc(); 
+//ssdasdas
+    $query1 = "SELECT * FROM categories";
+    
+    $result1 = $conn->query($query1);
+
+    $categories = array();
+
+    while($row2 = $result1->fetch_assoc()) { 
+    $categories[] = $row2;
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +31,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
     <div class="container">
     <h3 align="center">Edit Category</h3>
     <hr>
@@ -33,6 +44,20 @@
             <div class="form-group">
                 <label for="">Description</label>
                 <input type="text" class="form-control" id="" placeholder="" name="description" value="<?= $row['description'] ?>">
+            </div>
+            <div class="form-group">
+                <label for="">Chọn danh mục cha</label>
+                <select name="parent_id" class="form-group form-control">
+                    <option value="0">Mời bạn chọn</option>
+                <?php foreach ($categories as $row_category) { ?>
+                    <option <?php if ($row['parent_id']==$row_category['id']) {
+                        echo "selected";
+                    }?> value="<?= $row_category['id'] ?>"><?= $row_category['name'] ?></option>
+                <?php
+                } 
+                ?>
+                  
+                </select>
             </div>
             <button type="submit" class="btn btn-primary"><i class="fa fa-refresh" aria-hidden="true"></i> Update</button>
         </form>
