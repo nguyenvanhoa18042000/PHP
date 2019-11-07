@@ -1,37 +1,4 @@
-<?php
-	require_once('connection_mysql.php');
-	$query = "SELECT * FROM posts";
-	$result = $conn->query($query);
-	$posts = array();
-	while($row = $result->fetch_assoc()) { 
-		$posts[] = $row;
-	}
 
-	$query_join= 
-	"SELECT p.category_id,c.name
-	FROM posts p
-	JOIN categories c ON p.category_id=c.id
-	";
-
-	$result_join= $conn->query($query_join);
-	$name_categories= array();
-	while($row = $result_join->fetch_assoc()) { 
-		$name_categories[] = $row;
-	}
-
-	function custom_echo($x, $length)
-	{
-	  if(strlen($x)<=$length)
-	  {
-	    echo $x;
-	  }
-	  else
-	  {
-	    $y=substr($x,0,$length) . '...';
-	    echo $y;
-	  }
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,8 +22,6 @@
 		<?php
 	}
 	?>
-	<a style="text-align: right;  position: relative; float: right; right: 10%; margin-bottom: 2%;" class="btn btn-success" href="post_add.php"><i class="fa fa-plus" aria-hidden="true"></i> Add new post</a>
-
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -72,9 +37,9 @@
 		<?php foreach ($posts as $row_post) { 
 				?>
 			<tr>
-				<td><?php custom_echo($row_post['title'],54); ?></td>
-				<td style="width: 30%"><?php custom_echo($row_post['description'],200); ?></td>
-				<td style="width: 15%;"><img style="width: 135px; height: 120px;" src="images/<?php echo $row_post['thumbnail']; ?>"></td>
+				<td><?= $row_post['title']; ?></td>
+				<td style="width: 30%"><?= $row_post['description']; ?></td>
+				<td style="width: 15%;"><img style="width: 135px; height: 120px;" src="public/images/<?php echo $row_post['thumbnail']; ?>"></td>
 				<?php foreach ($name_categories as $name_category) {
 					if ($name_category['category_id']==$row_post['category_id']) {
 				?>

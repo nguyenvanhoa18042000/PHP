@@ -5,7 +5,6 @@
 	$time_created = date('Y-m-d H:i:s');
 	$data= $_POST;
 
-
 	$data['thumbnail']='';
 	$data['view_count']=0;
 	$data['created_at']=$time_created;

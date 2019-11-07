@@ -60,12 +60,13 @@
                     <option hidden value="0">--Choose a category--</option>
                 <?php foreach ($categories as $row_category) { ?>
                     <option  
-                    <?php 
-                    	if($post['category_id']==$row_category['id']){
-                     		echo "selected";
-                 		}
-                 	?> 
-                    value="<?= $row_category['id']?>"><?= $row_category['name']?></option>
+                        <?php 
+                        	if($post['category_id']==$row_category['id']){
+                         		echo "selected";
+                     		}
+                     	?> 
+                        value="<?= $row_category['id']?>"><?= $row_category['name']?>
+                    </option>
                 <?php
                 }
                 ?>

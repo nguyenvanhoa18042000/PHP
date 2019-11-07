@@ -16,6 +16,7 @@
 		$update_view="UPDATE posts SET view_count='".$row_post['view_count']."' WHERE id=".$id;
 		$conn->query($update_view);
 	}
+	
 	$query_categories="SELECT name FROM categories WHERE id=".$row_post['category_id'];
 	$result_categories=$conn->query($query_categories);
 	$row_category=	$result_categories->fetch_assoc();

@@ -56,8 +56,8 @@
             <button type="submit"  class="btn btn-primary">Create</button>
         </form>
     </div>
+</body>
+</html>
 <?php
     require_once('create_slug.php');
 ?>
-</body>
-</html>
