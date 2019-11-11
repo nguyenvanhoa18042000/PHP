@@ -14,6 +14,8 @@
 			}
 			return $posts;
 		}
+
+
 		function getNameCategory(){
 			$query_join= 
 			"SELECT p.category_id,c.name

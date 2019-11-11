@@ -22,6 +22,7 @@
 			<?php
 		}
 	?>
+	<a style="text-align: right;  position: relative; float: right; right: 10%; margin-bottom: 2%;" class="btn btn-success" href="?func=user&act=create"><i class="fa fa-plus" aria-hidden="true"></i> Add new user</a>
 	<table class="table table-hover">
   <thead>
     <tr>
@@ -38,7 +39,9 @@
 	      <td><?php echo $row['name']; ?></td>
 	      <td><?php echo $row['email']; ?></td>
 	      <td>
-	      	<a href="?func=user&act=detail&id=<?= $row['id'] ?>" class="btn" style="background: #337ab7; color: white;" ><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
+	      	<a href="?func=user&act=show&id=<?= $row['id'] ?>" class="btn" style="background: #337ab7; color: white;" ><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
+	      	<a href="?func=user&act=edit&id=<?= $row['id'] ?>" class="btn" style="background: #ff7300; color: white;"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+	      	<a href="?func=user&act=destroy&id=<?= $row['id'] ?>" class="btn" style="background: #ed6b75; color: white;"><i class="fa fa-trash" aria-hidden="true" ></i> Delete</a>
 	      </td>
 	    </tr>
 	<?php

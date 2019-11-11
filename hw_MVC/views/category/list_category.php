@@ -22,6 +22,7 @@
 			<?php
 		}
 	?>
+	<a style="text-align: right;  position: relative; float: right; right: 10%; margin-bottom: 2%;" class="btn btn-success" href="?func=category&act=create"><i class="fa fa-plus" aria-hidden="true"></i> Add new category</a>
 	<table class="table table-hover">
   <thead>
     <tr>
@@ -32,17 +33,17 @@
     </tr>
   </thead>
   <tbody>
-  	<?php foreach ($categories as $row) { 
-  		if ($row['deleted_at']==NULL) {
+  	<?php foreach ($categories as $category) { 
+  		if ($category['deleted_at']==NULL) {
   	?>
 	    <tr>
-	      <td><?php echo $row['id']; ?></td>
-	      <td><?php echo $row['name']; ?></td>
-	      <td><?php echo $row['description']; ?></td>
+	      <td><?php echo $category['id']; ?></td>
+	      <td><?php echo $category['name']; ?></td>
+	      <td><?php echo $category['description']; ?></td>
 	      <td>
-	      	<a href="category_detail.php?id=<?= $row['id'] ?>" class="btn" style="background: #337ab7; color: white;" ><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
-	      	<a href="category_edit.php?id=<?= $row['id'] ?>" class="btn" style="background: #ff7300; color: white;"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-	      	<a href="category_delete.php?id=<?= $row['id'] ?>" class="btn" style="background: #ed6b75; color: white;"><i class="fa fa-trash" aria-hidden="true" ></i> Delete</a>
+	      	<a href="?func=category&act=show&id=<?= $category['id'] ?>" class="btn" style="background: #337ab7; color: white;" ><i class="fa fa-eye" aria-hidden="true"></i> Detail</a>
+	      	<a href="?func=category&act=edit&id=<?= $category['id'] ?>" class="btn" style="background: #ff7300; color: white;"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+	      	<a href="?func=category&act=destroy&id=<?= $category['id'] ?>" class="btn" style="background: #ed6b75; color: white;"><i class="fa fa-trash" aria-hidden="true" ></i> Delete</a>
 	      </td>
 	    </tr>
 	<?php
