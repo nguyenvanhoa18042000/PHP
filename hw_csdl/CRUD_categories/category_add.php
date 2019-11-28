@@ -42,8 +42,9 @@
                 <label for="">Chọn danh mục cha</label>
                 <select name="parent_id" class="form-group form-control">
                     <option value="0">Mời bạn chọn</option>
-                <?php foreach ($categories as $row_category) { ?>
-                    <option value="<?= $row_category['id'] ?>"><?= $row_category['name'] ?></option>
+                <?php foreach ($categories as $category) {
+                 ?>
+                    <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
                 <?php
                 } 
                 ?>

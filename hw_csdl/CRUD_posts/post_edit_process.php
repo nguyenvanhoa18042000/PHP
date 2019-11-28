@@ -5,11 +5,12 @@
     $id = $_POST['id']; 
 	$data['thumbnail']='';
 
-	if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], 'images/'.$_FILES['thumbnail']['name'])) {
+	if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], 'public/public_blog/images/'.$_FILES['thumbnail']['name'])) {
 		$data['thumbnail']=basename($_FILES['thumbnail']['name']);
 	}else{
 		echo "Upload ảnh bị lỗi";
 	}
+	
 	if ($data['category_id']==0) {
 		if ($data['thumbnail']!='') {
 			$query ="UPDATE posts SET title='".$data['title']."', description='".$data['description']."', thumbnail='".$data['thumbnail']."', content='".$data['content']."', slug='".$data['slug']."' WHERE id=".$id;

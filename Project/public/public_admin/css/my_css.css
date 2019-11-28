@@ -1,0 +1,51 @@
+
+li.user-header{
+	background-color: #3c8dbc;
+}
+#dropdown-user{
+	width: 166px;
+	left: -93%;
+}
+nav nav-item .add_margin{
+	margin-left: 25px;
+}
+input{
+	text-align: left !important;
+}
+.my-btn:hover .fa,.my-btn:hover .fas,.my-btn:hover .far{
+	transform: scale(1.3) rotateY(360deg);
+	transition: 1s;
+}
+.btn-detail{
+	background: linear-gradient(45deg,#e91e63,#5d02ff) !important;
+}
+.btn-edit{
+	background: linear-gradient(45deg,#89ff00,#00bcd4) !important;
+}
+.btn-restore{
+	background: #36cac8 !important;
+}
+.btn-delete{
+	background: linear-gradient(45deg,#ff0057,#e64a19) !important;
+}
+.btn-mode{
+	background: linear-gradient(45deg,#ff0000,#ffc107) !important;
+}
+#login,#registration{
+	width: 48%;
+	height: 55px;
+	font-size: 20px;
+	display: inline-block;
+}
+#my-logo{
+	background: linear-gradient(to right ,#f32170,#ffeb07,#2196f3,#ff00eb);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 5em;
+}
+.typed-cursor{
+	display: none;
+}
+#run-text{
+	width: 100%;
+}
